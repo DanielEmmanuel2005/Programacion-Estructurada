@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include <stdlib.h>
+/*Invertir un arreglo*/
+int main()
+{
+    char Saludo[]="";
+    printf("Escribe lo que quieras\n");
+    gets(Saludo);
+
+    Invertir(Saludo);
+
+    return 0;
+}
+
+
+Invertir(char Saludo[]){
+    int i;
+    for(i=strlen(Saludo);i>=0;i--){
+        printf("%c",Saludo[i]);
+    }
+}
+
+
+/*Minuscula a Mayuscula*/
+int main()
+{
+    char Saludo[]="";
+    printf("Escribe lo que quieras en minusculas\n");
+    gets(Saludo);
+
+    Mayusculas(Saludo);
+
+    return 0;
+}
+
+
+Mayusculas(char Saludo[]){
+    int i;
+    for(i=0;i<strlen(Saludo);i++){
+        printf("%c",Saludo[i]-32);
+    }
+    }
+
+
+/*Contar vocales*/
+int main()
+{
+    char Saludo[]="";
+    printf("Escribe lo que quieras\n");
+    gets(Saludo);
+
+    Vocales(Saludo);
+
+    return 0;
+}
+
+
+Vocales(char Saludo[]){
+    int s=0,i;
+    for(i=0;i<10;i++){
+        if(Saludo[i]=='a'||Saludo[i]=='e'||Saludo[i]=='i'||Saludo[i]=='o'||Saludo[i]=='u'||Saludo[i]=='A'||Saludo[i]=='E'||Saludo[i]=='I'||Saludo[i]=='O'||Saludo[i]=='U'){
+            s++;
+        }
+    }
+     printf("Aparecen %d vocales\n",s);
+    }
