@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+// Define la estructura Videojuego con sus campos
+struct Videojuego {
+    char titulo[50];    // Cadena para almacenar el título (hasta 50 caracteres)
+    char genero[30];    // Cadena para almacenar el género (hasta 30 caracteres)
+    int año;            // Entero para almacenar el año de lanzamiento
+    float precio;       // Flotante para almacenar el precio con decimales
+};
+
+// Función para mostrar la lista de videojuegos
+void mostrarVideojuegos(struct Videojuego lista[], int tamaño) {
+    printf("Lista de Videojuegos:\n");  // Imprime el encabezado
+    printf("-----------------------------------------\n");  // Línea separadora
+    
+    // Bucle para recorrer todos los videojuegos en el arreglo
+    for(int i = 0; i < tamaño; i++) {
+        // Imprime cada campo del videojuego actual:
+        printf("Título: %s\n", lista[i].titulo);    // Muestra el título
+        printf("Género: %s\n", lista[i].genero);    // Muestra el género
+        printf("Año: %d\n", lista[i].año);          // Muestra el año
+        printf("Precio: $%.2f\n", lista[i].precio); // Muestra el precio con 2 decimales
+        printf("-----------------------------------------\n");  // Línea separadora
+    }
+}
+
+// Función principal del programa
+int main() {
+    // Declara e inicializa un arreglo de 3 estructuras Videojuego
+    struct Videojuego juegos[3] = {
+        // Primer videojuego
+        {"The Legend of Zelda: Breath of the Wild", // Título
+         "Aventura",                                // Género
+         2017,                                      // Año
+         59.99},                                    // Precio
+         
+        // Segundo videojuego
+        {"Red Dead Redemption 2",                   // Título
+         "Acción-Aventura",                         // Género
+         2018,                                      // Año
+         49.99},                                    // Precio
+         
+        // Tercer videojuego
+        {"Minecraft",                               // Título
+         "Sandbox",                                 // Género
+         2011,                                      // Año
+         26.95}                                    // Precio
+    };
+    
+    // Llama a la función para mostrar los videojuegos
+    mostrarVideojuegos(juegos, 3);  // Pasa el arreglo y su tamaño (3)
+    
+    return 0;  // Retorna 0 indicando que el programa terminó correctamente
+}
