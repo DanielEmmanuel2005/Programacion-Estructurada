@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct Estudiante {
+    char nombre[50];
+    int edad;
+    float promedio;
+         };
+
+struct Materias{
+    char Nombre [25];
+    float Calificacion;
+    int Creditos;
+};
+
+
+void Imprimir(struct Estudiante info)
+{
+    printf("Nombre: %s\n", info.nombre);
+    printf("edad: %d\n", info.edad);
+    printf("promedio: %f\n", info.promedio);
+}
+
+void Modificar(/*struct Estudiante *dato, float NuevoPromedio*/struct Materias *prom)
+{
+    float promedio;
+    promedio=(prom[0].Calificacion+prom[1].Calificacion+prom[2].Calificacion)/3;
+    printf("%f\n",promedio);
+    /*
+    dato->promedio=NuevoPromedio;
+    */
+
+}
+
+
+
+int main()
+{
+    struct Estudiante ana = {"Ana Garcia", 19, 9.5};
+    struct Materias Segundo[3]={
+    {"Programacion Estructurada",40.2,8},
+    {"Matematicas",80.8,8},
+    {"Mecanica",60.6,8}
+    };
+
+
+
+    Imprimir(ana);
+
+    Modificar(&Segundo);
+    printf("Despues de actualizar:\n");
+    Imprimir(ana);
+    return 0;
+}
