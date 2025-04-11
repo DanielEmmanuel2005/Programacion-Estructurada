@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+struct Producto
+{
+    int id;
+    char nombre[50];
+    float precio;
+    int stock;
+};
+
+
+void Busqueda(struct Producto inventario[],int tamano,char NombreBusqueda[]){
+    int i;
+    for(i=0;i<tamano;i++){
+         if (
+            strcmp(inventario[i],nombreBusqueda)==0){
+            printf("Precio:$%.2f\nStock:%d\n",inventario[i].precio, inventario[i].stock)
+            return;
+            }
+        }
+    printf("Producto no encontrado.\n");
+    }
+}
+
+void Venta(struct Producto inventario[]){
+
+}
+
+void Actualizacion(){
+
+}
+
+
+int main()
+{
+int opcion;
+
+struct Producto inventario[3]={
+{1,"Computadora",1000,20},
+{2,"Celular",500,10},
+{3,"Calculadora",200,5}
+};
+
+printf("Busqueda por id, 1")
+Busqueda(inventario,3,"Computadora");
+
+return 0;
+}
